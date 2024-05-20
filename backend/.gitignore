@@ -1,3 +1,4 @@
 *.pt
 photos/*.jpg
 .venv/
+*/__pycache__/
