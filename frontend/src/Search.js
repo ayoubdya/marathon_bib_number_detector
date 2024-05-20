@@ -22,7 +22,9 @@ const Search = () => {
   };
 
   useEffect(() => {
-    getImage();
+    if (searchInput !== "") {
+      getImage();
+    }
   }, [searchInput]);
 
   const handleSearch = (e) => {
