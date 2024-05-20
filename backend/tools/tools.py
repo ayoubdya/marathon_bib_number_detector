@@ -59,9 +59,3 @@ def preprocess_cropped(cropped):
     img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     # img = img.filter(ImageFilter.GaussianBlur(radius=1))
     return img
-
-
-def load_dump(dump_path="data/data.pkl"):
-    with open(dump_path, 'rb') as file:
-        data = pickle.load(file)
-    return data

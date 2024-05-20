@@ -5,13 +5,9 @@ from typing import List
 import os
 
 from detector import Detector
-from tools import load_dump
-
-MODEL_PATH = "models/best.pt"
-IMAGES_FOLDER = "photos"
+from config import IMAGES_FOLDER, MODEL_PATH
 
 app = FastAPI()
-images = []
 detector = Detector(MODEL_PATH)
 
 app.mount("/photos", StaticFiles(directory=IMAGES_FOLDER), name="photos")
@@ -41,16 +37,15 @@ async def upload_images(files: List[UploadFile] = File(...)):
 
     result = detector.detect_images(new_images)
     print(result)
-    detector.update_results(result)
+    detector.update_data(result)
 
     return {"message": "Images detected successfully"}
 
 
 @app.get("/number")
 def get_images_by_bib_number(bib_number: str):
-    data = load_dump()  # number: [image_path]
+    data = detector.load_data()  # number: [image_path]
     matching_images = []
-    # bib_number = int(bib_number)  # type: ignore
     if data.get(bib_number):
         matching_images = data[bib_number]
     return matching_images  # [image_path]

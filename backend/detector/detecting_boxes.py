@@ -4,13 +4,16 @@ from tools import add_padding
 import pytesseract
 import re
 import numpy as np
-import pickle
+
+from .data_manager import DataManager
+from config import DATA_PATH
 
 
 class Detector():
     def __init__(self, model_path):
         self.model = YOLO(model_path)
         self.current_image = np.array([])
+        self.data_manager = DataManager(DATA_PATH)
 
     def parse_boxes(self, result):
         img = self.current_image
@@ -51,18 +54,11 @@ class Detector():
                     result_dict[number] = [image_path]
         return result_dict
 
-    def dump_results(self, result_dict):
-        with open("data/data.pkl", "wb") as file:
-            pickle.dump(result_dict, file)
+    def dump_data(self, result_dict):
+        self.data_manager.save(result_dict)
 
-    def update_results(self, result_dict):
-        with open("data/data.pkl", "rb") as file:
-            data = pickle.load(file)
-            for number, image_paths in result_dict.items():
-                if data.get(number):
-                    data[number].extend(image_paths)
-                else:
-                    data[number] = image_paths
-        with open("data/data.pkl", "wb") as file:
-            pickle.dump(data, file)
-        return data
+    def update_data(self, result_dict):
+        self.data_manager.update(result_dict)
+
+    def load_data(self):
+        return self.data_manager.load()

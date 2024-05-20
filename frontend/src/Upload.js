@@ -30,6 +30,7 @@ export default function Upload() {
         body: formData,
       });
       const data = await response.json();
+      setShowModal(false);
       console.log(data.message);
     } catch (error) {
       console.error("Error uploading images:", error);
@@ -67,15 +68,6 @@ export default function Upload() {
             />
             <span>Upload</span>
           </label>
-          <label className="custom-file-upload">
-            <button className="" onClick={handleUpload}></button>
-            {/* <input
-              type="button"
-              className="form-control-file text-white"
-              onChange={handleUpload}
-            /> */}
-            <span>Submit</span>
-          </label>
         </div>
       </div>
       <Modal
@@ -102,6 +94,9 @@ export default function Upload() {
         <Modal.Footer>
           <Link className="btn2" onClick={() => setShowModal(false)}>
             <span>Close</span>
+          </Link>
+          <Link className="btn2" onClick={handleUpload}>
+            <span>Upload</span>
           </Link>
         </Modal.Footer>
       </Modal>

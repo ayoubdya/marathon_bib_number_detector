@@ -2,4 +2,4 @@
 photos/*.jpg
 .venv/
 /__pycache__/
-.pyc
+*.pyc
