@@ -17,7 +17,9 @@ class DataManager:
         obj = self.load()
         for key, array in data.items():
             if obj.get(key):
-                obj[key].extend(array)
+                set_ = set(obj[key])
+                set_.update(array)
+                obj[key] = list(set_)
             else:
                 obj[key] = array
         self.save(obj)

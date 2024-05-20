@@ -5,8 +5,11 @@ import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Upload() {
+  const backendUrl = "http://localhost:8000/";
+
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
@@ -19,13 +22,14 @@ export default function Upload() {
   };
 
   const handleUpload = async () => {
+    setLoading(true);
     const formData = new FormData();
     for (const fileObj of selectedFiles) {
       formData.append("files", fileObj.file);
     }
 
     try {
-      const response = await fetch("http://localhost:8000/images", {
+      const response = await fetch(backendUrl + "images", {
         method: "POST",
         body: formData,
       });
@@ -35,6 +39,7 @@ export default function Upload() {
     } catch (error) {
       console.error("Error uploading images:", error);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -66,7 +71,7 @@ export default function Upload() {
               className="form-control-file text-white"
               onChange={handleFileChange}
             />
-            <span>Upload</span>
+            <span>Select Images</span>
           </label>
         </div>
       </div>
@@ -96,7 +101,7 @@ export default function Upload() {
             <span>Close</span>
           </Link>
           <Link className="btn2" onClick={handleUpload}>
-            <span>Upload</span>
+            <span>{loading ? "Detecting..." : "Upload"}</span>
           </Link>
         </Modal.Footer>
       </Modal>
