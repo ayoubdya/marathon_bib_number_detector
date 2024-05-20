@@ -54,3 +54,15 @@ class Detector():
     def dump_results(self, result_dict):
         with open("data/data.pkl", "wb") as file:
             pickle.dump(result_dict, file)
+
+    def update_results(self, result_dict):
+        with open("data/data.pkl", "rb") as file:
+            data = pickle.load(file)
+            for number, image_paths in result_dict.items():
+                if data.get(number):
+                    data[number].extend(image_paths)
+                else:
+                    data[number] = image_paths
+        with open("data/data.pkl", "wb") as file:
+            pickle.dump(data, file)
+        return data
