@@ -1,0 +1,105 @@
+/*--header--*/
+header{
+    background-color: #323232;
+    display: flex;
+    justify-content: space-between;
+    height:93px;
+    width:100%;
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
+}
+header img{
+    width: 190px;
+    margin: -50px 0px 0px 0px;
+}
+header .list{
+    margin:37px 124px  33px 330px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+header .list a{
+    font-size: 18px;
+    margin-right: 48px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+}
+header .list a:hover{
+    border-bottom: 1.5px solid #F0F0F0;
+}
+header .a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:1483px){
+    header .list{
+        margin:37px 120px  33px 430px;
+    }
+}
+@media(max-width:1388px){
+    header .list{
+        margin:37px 119px  33px 380px;
+    }
+}
+@media(max-width:1322px){
+    header .list{
+        margin:37px 115px  33px 250px;
+    }
+}
+@media(max-width:1190px){
+    header .list{
+        margin:37px 110px  33px 190px;
+    }
+}
+@media(max-width:1125px){
+    header .list{
+        margin:37px 100px  33px 100px;
+    }
+}
+@media(max-width:1012px){
+    header .list a{
+        font-size: 16px;
+        margin-right: 40px;
+        font-weight: 700;
+    } 
+}
+@media(max-width:940px){
+    header .list a{
+        font-size: 16px;
+        margin-right: 40px;
+    }
+}
+@media(max-width:925px){
+    header .list a{
+        margin-right: 35px;
+    }
+}
+@media(max-width:846px){
+    header .list{
+        margin:37px 110px  33px 50px;
+    }
+}
+@media(max-width:805px){
+    header .list a{
+        margin-right: 30px;
+    } 
+}
+@media(max-width:751px){
+    header .list{
+        margin:37px 90px  33px 40px;
+    }
+}
+@media(max-width:720px){
+    header .list{
+        margin:37px 43px  33px 20px;
+    }
+}
+@media(max-width:660px){
+    header .list{
+        margin:37px 0px  33px 20px;
+    }
+}

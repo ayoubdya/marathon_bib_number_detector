@@ -1,0 +1,86 @@
+.Upl{
+    background-image: url('./images/Upload.png');
+    background-size: 100% 100%;
+    overflow: hidden;
+    height: 100vh;
+}    
+.custom-file-upload input[type="file"] {
+        display: none;
+    }
+.custom-file-upload {
+        border: 3px solid #FFFFFF;
+        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 27px;
+        width: 198px;
+        height: 54px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15.4628px 25px;
+        isolation: isolate;
+        margin: 19px 200px 20px 50px;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 22px;
+        text-align: center;
+        font-variant: all-small-caps;
+        cursor: pointer;
+}
+.custom-file-upload span{ 
+    transition:  0.7s ease; 
+}
+.custom-file-upload:hover span{ 
+    transform: scale(1.2);
+}
+@media (max-width:1180px) {
+    .custom-file-upload {
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:768px) {
+    .custom-file-upload {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+/*---  ajouter un défilement (scroll) à votre modal, 
+vous pouvez utiliser les propriétés de CSS pour contrôler la hauteur de la modal et activer le défilement lorsque le contenu dépasse cette hauteur.---*/
+.modal-body {
+    max-height: 400px; /* Ajustez cette valeur selon vos besoins */
+    overflow-y: auto;
+}
+.btn2{
+    border: 3px solid black;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 32px;
+    width: 100px;
+    height: 38px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15.4628px 25px;
+    isolation: isolate;
+    margin: 19px 11px 20px 50px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    font-variant: all-small-caps;
+}
+.btn2 span{ 
+    transition:  0.7s ease; 
+}
+.btn2:hover span{ 
+    transform: scale(1.2);
+}
+

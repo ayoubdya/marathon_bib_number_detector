@@ -1,0 +1,35 @@
+.Searchpage{
+    background-image: url('./images/Search.png');
+    background-size: 100% 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+.bib{
+    padding-top: 100px;
+}
+.btn-gray {
+    background-color: #808080;
+    border-color: #808080;
+    color: #fff;
+  }
+  
+  .btn-gray:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .form-control:focus {
+    border-color: #808080;
+    box-shadow: 0 0 0 0.2rem rgba(128, 128, 128, 0.25);
+  }
+  
+  .img-thumbnail {
+    max-height: 500px; /* Ajustez cette valeur selon vos besoins */
+    object-fit: cover; /* Assurez que l'image reste dans le conteneur sans être déformée */
+  }
+  
+  .Searchpage .row {
+    max-height: 80vh; /* Limitez la hauteur de la zone de défilement */
+    overflow-y: auto; /* Ajoutez un défilement vertical si nécessaire */
+  }
+  

@@ -1,0 +1,272 @@
+/*--bgHome--*/
+.bgHome{
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-color: #5C190F;
+    background-image:url(./images/bgHome.png);
+    position: relative;
+    overflow: hidden;
+}
+@media(max-width:500px){
+    .bgHome{
+        height: 620px;
+    }
+}
+@media(max-width:420px){
+    .bgHome{
+        height: 590px;
+    }
+}
+@media(max-width:378px){
+    .bgHome{
+        height: 560px;
+    }
+}
+/*--info--*/
+.info{
+    background: #323232;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 47px 52px;
+    overflow: hidden;
+}
+.info p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+/*--btngrp--*/
+.btngrp{
+    display: flex;
+}
+.btn1{
+    border: 3px solid #FFFFFF;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 27px;
+    width: 198px;
+    height: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15.4628px 25px;
+    isolation: isolate;
+    margin: 19px 11px 20px 50px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18.1915px;
+    text-align: center;
+    font-variant: all-small-caps;
+}
+.btn1 span{ 
+    transition:  0.7s ease; 
+}
+.btn1:hover span{ 
+    transform: scale(1.2);
+}
+@media (max-width:1180px) {
+    .btn1 {
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:768px) {
+    .btn1 {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+/*--imggrp--*/
+.imggrp{
+    display: flex;
+    justify-content: center;
+}
+.imggrp img {
+    max-width: 100%;
+    height: auto;
+    flex: 1; /* Permet aux images de se redimensionner également */
+}
+.imggrp img {
+    max-width: calc(33.33% - 10px); /* Réduit la largeur maximale pour s'adapter à trois images avec marges */
+    flex: 1 1 calc(33.33% - 10px); /* Ajuste la flexibilité pour rester sur une ligne */
+}
+
+@media (max-width: 768px) {
+    .imggrp img {
+        max-width: calc(50% - 10px); /* Ajuste la largeur pour deux images par ligne sur les écrans moyens */
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .imggrp img {
+        max-width: calc(100% - 10px); /* Ajuste la largeur pour une image par ligne sur les petits écrans */
+        flex: 1 1 calc(100% - 10px);
+    }
+}
+/*--------------------contact us title & boxs-------------------*/
+.contactus{
+    background-color: #323232;
+}
+.contactuscenter{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.contactuscenter h1{
+font-family: 'Rund Display';
+font-style: normal;
+font-weight: 800;
+font-size: 7vw;
+line-height: 0px;
+color: white;
+}
+@media(max-width:660px){
+    .contactuscenter h1{
+        font-size: 10vw;
+        }
+}
+@media(max-width:500px){
+    .contactuscenter h1{
+        font-size: 11vw;
+        }
+}
+
+.contactusboxs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:10px 79px 0px 79px;
+}
+.contactusboxs .container{
+    display: flex;
+    justify-content: center;
+}
+.contbox{
+    display: flex;
+    width: 318px;
+    height: 123px;
+    background-color: #504E4E;
+    border-radius: 40px;
+    margin: 40px auto;
+}
+
+.contbox img{
+    width: 39px;
+    height: 39px;
+    margin: 29px 23px 55px 33px;
+}
+.contbox .continfo {
+margin-top: 29px ;
+    }
+.contbox .continfo h2{
+font-family: 'Rund Display';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 95.5%;
+color: #F0F0F0;
+padding-bottom: 14px;
+}
+.contbox .continfo h3{
+    font-family: 'Rund Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 95.5%;
+    color: #F0F0F0;
+}
+@media(max-width:1480px){
+    .contactusboxs{
+        padding:0px 79px 0px 79px;
+    }
+    .contbox {
+        margin: 0px auto 0px auto;
+    }
+}
+@media(max-width:1200px){
+    .contbox{
+        width: 300px;
+        height: 110px;
+        margin: 0px auto 25px auto;
+    }
+    .contbox img{
+        width: 36px;
+        height: 36px;
+        margin: 25px 23px 55px 33px;
+    }
+    .contbox .continfo h2{
+    font-size: 28px;
+    line-height: 80%;
+    padding-bottom: 14px;
+    }
+    .contbox .continfo h3{
+        font-size: 17px;
+
+    }
+}
+@media(max-width:800px){
+    .contbox{
+        width: 260px;
+        height: 80px;
+        margin: 0px auto 25px auto;
+    }
+    .contbox img{
+        width: 31px;
+        height: 31px;
+        margin: 16px 23px 55px 33px;
+    }
+    .contbox .continfo h2{
+        font-size: 25px;
+        line-height: 0%;
+        padding-bottom: 14px;
+    }
+    .contbox .continfo h3{
+        font-size: 14px;
+    }
+}
+@media (min-width:576px)and(max-width: 768px) {
+    .contactusboxs{
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (min-width:768px)and(max-width: 1200px) {
+    #email123{
+        transform: translateX(100px)
+    }
+}
+@media(max-width:350px){
+    .contbox{
+        width: 200px;
+        height: 80px;
+        margin: 0px auto 25px auto;
+    }
+    .contbox img{
+        width: 25px;
+        height: 25px;
+        margin: 16px 23px 55px 33px;
+    }
+    .contbox .continfo h2{
+        font-size: 20px;
+        line-height: 0%;
+        padding-bottom: 14px;
+    }
+    .contbox .continfo h3{
+        font-size: 13px;
+    }
+    .contbox .continfo {
+        margin-top: 29px;
+        margin-left: -8px;
+    }
+}
+
