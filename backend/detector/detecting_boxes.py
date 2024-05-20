@@ -46,12 +46,17 @@ class Detector():
     def detect_images(self, image_paths):
         result_dict = {}  # {number: [image_path]}
         for image_path in image_paths:
-            numbers = self.detect(image_path)
-            for number in numbers:
-                if result_dict.get(number):
-                    result_dict[number].append(image_path)
-                else:
-                    result_dict[number] = [image_path]
+            try:
+                numbers = self.detect(image_path)
+                for number in numbers:
+                    if result_dict.get(number):
+                        result_dict[number].append(image_path)
+                    else:
+                        result_dict[number] = [image_path]
+            except Exception as e:
+                print("for loop error", e)
+                with open('error.log', 'a') as f:
+                    f.write(f'{image_path} {e}\n')
         return result_dict
 
     def dump_data(self, result_dict):

@@ -3,7 +3,7 @@ import os
 
 model_path = 'models/best.pt'
 image_paths = os.listdir('photos')
-image_paths = image_paths[10:20]
+# image_paths = image_paths[10:20]
 folder_path = 'photos'
 image_paths = [os.path.join(folder_path, image_path)
                for image_path in image_paths]
