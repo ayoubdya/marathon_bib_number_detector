@@ -3,7 +3,6 @@ import numpy as np
 import imutils
 from PIL import Image
 from deskew import determine_skew
-import pickle
 
 
 def add_padding(img, box, padding=10):
@@ -55,7 +54,6 @@ def preprocess_cropped(cropped):
     img = deskew(img, angle)
     img = crop_dark_regions(img)
     img = cv2.bilateralFilter(img, 11, 17, 17)
-    img = crop_dark_regions(img)
     img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     # img = img.filter(ImageFilter.GaussianBlur(radius=1))
     return img

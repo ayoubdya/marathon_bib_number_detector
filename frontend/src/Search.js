@@ -63,9 +63,9 @@ const Search = () => {
           </button>
         </div>
       </form>
-      {console.log(imageArray)}
+      {console.log("imageArray", imageArray)}
       <div className="row overflow-auto">
-        {imageArray !== null ? (
+        {imageArray ? (
           imageArray.map((imagePath, idx) => (
             <div key={idx} className="col-md-4 col-sm-6 mb-3">
               <img
