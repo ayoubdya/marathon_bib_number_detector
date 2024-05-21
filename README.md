@@ -1,3 +1,9 @@
+# DEMO
+
+[![Demo](https://img.youtube.com/vi/pUOKj6Kazo8/0.jpg)](https://www.youtube.com/watch?v=pUOKj6Kazo8)
+
+# How to run the project
+
 ### 1. Prepare the backend
 
 Put the trained model in `backend/models`
